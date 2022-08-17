@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="iStockMicro.Views.CategoryListPage"
+             xmlns:fonthelper="clr-namespace:iStockMicro.FontIconHelper"
+             Title="CategoryListPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="AddItems_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="MaterialDesingIconFont"
+                                         Color="LightGray"
+                                         Glyph="{x:Static fonthelper:MaterialIconFont.PlusCircle}"
+                                         Size="28"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <CollectionView ItemsSource="{Binding CategoryList}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
+                        <Label 
+                       Text="{Binding categoryname}"
+                       FontAttributes="Bold" />
+                      
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="iStockMicro.Views.SaleEntryPage"
+             xmlns:fonthelper="clr-namespace:iStockMicro.FontIconHelper"
+             xmlns:components="clr-namespace:iStockMicro.Components"
+             Title="Invoice">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="AddCustomer_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="MaterialDesingIconFont"
+                                         Color="LightGray"
+                                         Glyph="{x:Static fonthelper:MaterialIconFont.AccountPlus}"
+                                         Size="28"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <Grid RowDefinitions="auto,auto,*">
+        <Frame BorderColor="Transparent" 
+               Padding="2,5,2,5" 
+               Margin="10,5,10,5" HeightRequest="65" 
+               BackgroundColor="#3f51b5">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Tapped_CheckOut"/>
+            </Frame.GestureRecognizers>
+            <AbsoluteLayout>
+                <Grid 
+               AbsoluteLayout.LayoutBounds="0.6,0.5,150,25"
+               AbsoluteLayout.LayoutFlags="PositionProportional"  
+                  RowDefinitions="*,*" 
+                  ColumnDefinitions="*,*" 
+                  VerticalOptions="CenterAndExpand">
+                <Label Grid.Column="0" Text="CHARGE" FontAttributes="Bold" TextColor="White" 
+                       FontSize="Medium"
+                       WidthRequest="100"
+                       HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                <Label Grid.Column="0" Padding="2,0,2,0" TextColor="WhiteSmoke" FontSize="Subtitle" Grid.Row="1" Text="{Binding InvoiceAmount,StringFormat='{0:#,###,##}'}" HorizontalTextAlignment="Center"/>
+                
+            </Grid>
+             <StackLayout 
+                 AbsoluteLayout.LayoutBounds="1,0.5,35,100"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"
+                 
+                 Orientation="Horizontal" >
+                    <Image x:Name="shoppingcart">
+                        <Image.Source>
+                            <FontImageSource 
+                        FontFamily="MaterialDesingIconFont"
+                        Size="25"
+                        Color="White"
+                        Glyph="{x:Static fonthelper:MaterialIconFont.Cart}">
+                            </FontImageSource>
+                        </Image.Source>
+                    </Image>
+                    <Frame  x:Name="frm_totalqty"
+                            Margin="-12,-15,0,0"
+                           BorderColor="#3f51b5"
+                           BackgroundColor="White"
+                           CornerRadius="50"
+                           HeightRequest="18"
+                           WidthRequest="18"
+                           IsClippedToBounds="True"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center">
+                        <Label Margin="-16,-18,0,0" 
+                               HorizontalTextAlignment="Start" 
+                               VerticalTextAlignment="Start"
+                               VerticalOptions="Start" 
+                               HorizontalOptions="Start" 
+                               FontAttributes="Bold"
+                               TextColor="Blue" Text="{Binding InvoiceQty}" FontSize="11"/>
+                    </Frame>
+                </StackLayout>
+            </AbsoluteLayout>
+        </Frame>
+        <HorizontalStackLayout Margin="20,10,20,10" Spacing="5" VerticalOptions="Center" HorizontalOptions="End" Grid.Row="1">
+            <ImageButton Clicked="ChangeListUI_Clicked">
+                <ImageButton.Source>
+                    <FontImageSource 
+                        FontFamily="MaterialDesingIconFont"
+                        Color="LightSlateGray"
+                        Size="35"
+                        Glyph="{x:Static fonthelper:MaterialIconFont.ViewAgendaOutline}">
+
+                    </FontImageSource>
+                </ImageButton.Source>
+            </ImageButton>
+            <ImageButton Clicked="ChangeGridUI_Clicked">
+                <ImageButton.Source>
+                    <FontImageSource 
+                        FontFamily="MaterialDesingIconFont"
+                        Color="LightSlateGray"
+                        Size="35"
+                        Glyph="{x:Static fonthelper:MaterialIconFont.ViewGridOutline}">
+
+                    </FontImageSource>
+                </ImageButton.Source>
+            </ImageButton>
+        </HorizontalStackLayout>
+
+            <components:CodeListComponent Grid.Row="2" x:Name="_CodeListComponent" />
+     
+        <components:CodeListGridViewComponent IsVisible="false" x:Name="_CodeGridComponent" Grid.Row="2"/>
+    </Grid>
+</ContentPage>

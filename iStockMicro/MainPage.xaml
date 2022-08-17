@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fonthelper="clr-namespace:iStockMicro.FontIconHelper"
+             Title="Happy-Mart"
+             x:Class="iStockMicro.MainPage">
+    
+			 
+    <ScrollView>
+        <Grid Padding="10" RowSpacing="20" ColumnDefinitions="*,*" RowDefinitions="auto,auto,auto">
+            <Button Grid.Column="0" Grid.Row="0"
+                x:Name="BtnStockCode"
+                Text="ItemCode"
+                HeightRequest="50"
+                WidthRequest="180"
+                SemanticProperties.Hint="Create ItemCode"
+                Clicked="BtnItemCode_Clicked"
+                HorizontalOptions="Center" />
+            <Button Grid.Column="1" Grid.Row="0"
+                x:Name="BtnStockList"
+                Text="ItemList"
+                HeightRequest="50"
+                WidthRequest="180"
+                SemanticProperties.Hint="ItemCode List"
+                Clicked="BtnItemCodeList_Clicked"
+                HorizontalOptions="Center" />
+            <Button Grid.Column="0" Grid.Row="1"
+                x:Name="BtnCategory"
+                Text="Category"
+                HeightRequest="50"
+                WidthRequest="180"
+                SemanticProperties.Hint="Create ItemCode"
+                Clicked="BtnCategory_Clicked"
+                HorizontalOptions="Center" />
+            <Button Grid.Column="1" Grid.Row="1"
+                x:Name="BtnCategoryList"
+                Text="CategoryList"
+                HeightRequest="50"
+                WidthRequest="180"
+                SemanticProperties.Hint="Create ItemCode"
+                Clicked="BtnCategoryList_Clicked"
+                HorizontalOptions="Center" />
+            <Button Grid.Column="0" Grid.Row="2"
+                x:Name="BtnSalesEntry"
+                Text="Sales"
+                HeightRequest="50"
+                WidthRequest="180"
+                Clicked="BtnSaleEntry_Clicked"
+                HorizontalOptions="Center" />
+            <Button Grid.Column="1" Grid.Row="2"
+                x:Name="BtnSalesEntryList"
+                Text="SalesRecord"
+                HeightRequest="50"
+                WidthRequest="180"
+                Clicked="BtnSalesEntryList_Clicked"
+                HorizontalOptions="Center" />
+        </Grid>
+    </ScrollView>
+ 
+</ContentPage>

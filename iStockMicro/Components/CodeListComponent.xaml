@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fonthelper="clr-namespace:iStockMicro.FontIconHelper"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="iStockMicro.Components.CodeListComponent">
+    <Grid RowDefinitions="auto,*">
+        <Frame Margin="10" BorderColor="WhiteSmoke" CornerRadius="5">
+            <Grid VerticalOptions="Center" ColumnDefinitions="auto,*">
+                <Image Grid.Column="0">
+                    <Image.Source>
+                        <FontImageSource FontFamily="MaterialDesingIconFont"
+                                         Color="LightGray"
+                                         Glyph="{x:Static fonthelper:MaterialIconFont.Magnify}"
+                                         Size="30"/>
+                    </Image.Source>
+                </Image>
+                <Picker Grid.Column="1" x:Name="CategoryPicker" 
+                            Margin="30,0"
+                            Title="Select Category" 
+                            ItemsSource="{Binding Category}"
+                            SelectedIndexChanged="Pkr_CategorySelectionChanged"
+                            ItemDisplayBinding="{Binding categoryname}">
+
+                </Picker>
+            </Grid>
+        </Frame>
+        <ScrollView Margin="10" Grid.Row="1">
+            <VerticalStackLayout>
+        <CollectionView               
+                        
+                        ItemsSource="{Binding CodeList}"
+                        VerticalScrollBarVisibility="Always"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedUsrCode}"
+                        SelectionChanged="CV_CodeListSelectionChanged">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
+                        <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState Name="Normal" >
+                                            <VisualState.Setters>
+                                                <Setter Property="BackgroundColor" Value="White" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Selected">
+                                            <VisualState.Setters>
+                                                <Setter Property="BackgroundColor" Value="LightGray" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+
+                                </VisualStateManager.VisualStateGroups>
+                          
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <toolkit:AvatarView 
+                                                    x:Name="av_header"
+                                                    Margin="3,3,20,3"
+                                                    Grid.RowSpan="2" 
+                                                    FontSize="18"
+                                                    FontAttributes="Bold"
+                                                    TextColor="White"
+                                                    BorderColor="Red"
+                                                    Background="Red" Text="A"/>
+
+                        <Label Grid.Column="1"
+                       Text="{Binding usrcode}"
+                       FontAttributes="Bold" />
+                        <Label Grid.Row="1" Grid.Column="1"
+                       Text="{Binding description}"
+                       FontAttributes="Italic"
+                       VerticalOptions="End" />
+                        <Label Grid.Row="0" 
+                               Grid.RowSpan="2" 
+                               Grid.Column="2"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"
+                       Text="{Binding saleprice,StringFormat='{0:#,###,##}'}"
+                       FontAttributes="Italic"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+    
+</ContentView>

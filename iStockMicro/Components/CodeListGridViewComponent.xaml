@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:fonthelper="clr-namespace:iStockMicro.FontIconHelper"
+             x:Class="iStockMicro.Components.CodeListGridViewComponent">
+    <Grid RowDefinitions="auto,*">
+        <Frame  HeightRequest="45" Margin="10" BorderColor="WhiteSmoke" CornerRadius="5">
+            <Grid VerticalOptions="Center" ColumnDefinitions="auto,*">
+                <Image Grid.Column="0">
+                    <Image.Source>
+                        <FontImageSource FontFamily="MaterialDesingIconFont"
+                                         Color="LightGray"
+                                         Glyph="{x:Static fonthelper:MaterialIconFont.Magnify}"
+                                         Size="30"/>
+                    </Image.Source>
+                </Image>
+                <Picker Grid.Column="1" x:Name="CategoryPicker" 
+                            Margin="30,0"
+                            Title="Select Category" 
+                            ItemsSource="{Binding Category}"
+                            SelectedIndexChanged="Pkr_CategorySelectionChanged"
+                            ItemDisplayBinding="{Binding categoryname}">
+
+                </Picker>
+            </Grid>
+        </Frame>
+        <ScrollView Grid.Row="1" Margin="10">
+            <FlexLayout Wrap="Wrap"
+                        AlignContent="SpaceEvenly"
+                        BindableLayout.ItemsSource="{Binding CodeList}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="5" HeightRequest="100" WidthRequest="100" 
+                                BorderColor="Gray"
+                                CornerRadius="10">
+                        <Label Text="{Binding usrcode}" />
+                        </Frame>
+                   
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </FlexLayout>
+        </ScrollView>
+    </Grid>
+</ContentView>

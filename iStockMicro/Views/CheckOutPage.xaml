@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="iStockMicro.Views.CheckOutPage"
+             xmlns:fonthelper="clr-namespace:iStockMicro.FontIconHelper"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title="Charge">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="Confirm_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="MaterialDesingIconFont"
+                                         Color="White"
+                                         Glyph="{x:Static fonthelper:MaterialIconFont.ContentSave}"
+                                         Size="28"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <Border Margin="5"
+            StrokeLineCap="Round"
+            StrokeLineJoin="Round"
+            Stroke="DarkGray"
+            StrokeDashOffset="8"
+            StrokeDashArray=".5,2"
+           StrokeThickness="2">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="10" />
+        </Border.StrokeShape>
+        <Grid RowDefinitions="auto,*,auto">
+            <Frame BackgroundColor="LightGray" BorderColor="Transparent" Margin="3" HeightRequest="80">
+                <Grid ColumnDefinitions="*,*" >
+                    <Label Grid.Column="0" VerticalOptions="Center" 
+                                FontSize="Medium" FontAttributes="Bold" 
+                                TextColor="Indigo"
+                                HorizontalOptions="Start" Text="{Binding SaleHead.invoiceno}"/>
+                    <Label Grid.Column="1" VerticalOptions="Center" FontSize="Medium" HorizontalOptions="End" Text="{Binding SaleHead.customername}"/>
+                </Grid>
+            </Frame>
+
+            <CollectionView
+                        Margin="10" Grid.Row="1" 
+                        x:Name="cv_checkoutlist"
+                        ItemsSource="{Binding SaleDet}"
+                        VerticalScrollBarVisibility="Always"
+                        SelectionMode="Single">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <SwipeView>
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState Name="Normal" >
+                                                <VisualState.Setters>
+                                                    <Setter Property="BackgroundColor" Value="White" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState x:Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="BackgroundColor" Value="White" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <SwipeView.RightItems>
+                                        <SwipeItems Mode="Reveal">
+                                            <SwipeItem 
+                                                BackgroundColor="Red"
+
+                                                Invoked="OnDeleteSwipeItemInvoked">
+                                                <SwipeItem.IconImageSource>
+                                                    <FontImageSource
+                                            FontFamily="MaterialDesingIconFont"
+                                            Glyph="{x:Static fonthelper:MaterialIconFont.DeleteForever}"
+                                            Size="18"
+                                            Color="Red">
+                                                    </FontImageSource>
+                                                </SwipeItem.IconImageSource>
+                                            </SwipeItem>
+                                        </SwipeItems>
+                                    </SwipeView.RightItems>
+                                    <VerticalStackLayout>
+                                        <Grid Padding="10">
+                                            
+                                            <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="1"
+                       Text="{Binding usrcode}"
+                       FontAttributes="Bold" />
+                                    <Label Grid.Row="1" Grid.Column="1"
+                       Text="{Binding description}"
+                       FontAttributes="Italic"
+                       VerticalOptions="End" />
+                                    <Label Grid.Row="0" 
+                               Grid.RowSpan="2" 
+                               Grid.Column="2"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"
+                       Text="{Binding saleprice,StringFormat='{0:#,###,##}'}"
+                       FontAttributes="Italic"/>
+
+                                    
+                                </Grid>
+                                <BoxView Grid.Row="2" Grid.ColumnSpan="3"  BackgroundColor="LightGray" HeightRequest=".5" />
+                                </VerticalStackLayout>
+                                </SwipeView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                
+            <Frame Grid.Row="2" HeightRequest="80" 
+                   BorderColor="Transparent"
+                   BackgroundColor="WhiteSmoke" Margin="5">
+                <Grid VerticalOptions="Center" RowDefinitions="*,*,*" ColumnDefinitions="*,*">
+                    <Label FontSize="Medium" Text="Total Qty" HorizontalOptions="End"/>
+                    <Label FontSize="Medium" FontAttributes="Bold" Grid.Column="1" Text="{Binding InvoiceQty}" HorizontalOptions="End"/>
+
+                    <Label FontSize="Medium" Grid.Row="1" Text="Total Amount" HorizontalOptions="End"/>
+                    <Label FontSize="Medium" FontAttributes="Bold" Grid.Row="1" Grid.Column="1" Text="{Binding InvoiceAmount,StringFormat='{0:#,###,##}'}" HorizontalOptions="End"/>
+                    
+                </Grid>
+            </Frame>
+        </Grid>
+    </Border>
+</ContentPage>

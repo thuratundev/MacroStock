@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               
+                CanBeDismissedByTappingOutsideOfPopup="False"
+             x:Class="iStockMicro.Views.TownshipPopUp">
+    <Frame BorderColor="Blue" Padding="2,5,2,5" CornerRadius="20" Margin="10,5,10,5" 
+           HeightRequest="300" WidthRequest="200">
+        <Label Text="I Am Township Popup"
+               FontSize="Caption"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+    </Frame>
+</toolkit:Popup>

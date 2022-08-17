@@ -1,0 +1,106 @@
+is_global = true
+build_property.TargetFramework = net6.0-maccatalyst
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = iStockMicro
+build_property.ProjectDir = C:\$Work\Learning\Projects\iStockMicro\iStockMicro\
+
+[C:/$Work/Learning/Projects/iStockMicro/iStockMicro/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/$Work/Learning/Projects/iStockMicro/iStockMicro/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/$Work/Learning/Projects/iStockMicro/iStockMicro/Components/CodeListComponent.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.Components.CodeListComponent.xaml
+build_metadata.AdditionalFiles.TargetPath = Components\CodeListComponent.xaml
+build_metadata.AdditionalFiles.RelativePath = Components\CodeListComponent.xaml
+
+[C:/$Work/Learning/Projects/iStockMicro/iStockMicro/Components/CodeListGridViewComponent.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.Components.CodeListGridViewComponent.xaml
+build_metadata.AdditionalFiles.TargetPath = Components\CodeListGridViewComponent.xaml
+build_metadata.AdditionalFiles.RelativePath = Components\CodeListGridViewComponent.xaml
+
+[C:/$Work/Learning/Projects/iStockMicro/iStockMicro/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/$Work/Learning/Projects/iStockMicro/iStockMicro/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/$Work/Learning/Projects/iStockMicro/iStockMicro/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/$Work/Learning/Projects/iStockMicro/iStockMicro/Views/CategoryListPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.Views.CategoryListPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CategoryListPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CategoryListPage.xaml
+
+[C:/$Work/Learning/Projects/iStockMicro/iStockMicro/Views/CategorySetupPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.Views.CategorySetupPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CategorySetupPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CategorySetupPage.xaml
+
+[C:/$Work/Learning/Projects/iStockMicro/iStockMicro/Views/CheckOutPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.Views.CheckOutPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CheckOutPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CheckOutPage.xaml
+
+[C:/$Work/Learning/Projects/iStockMicro/iStockMicro/Views/CodeListPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.Views.CodeListPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CodeListPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CodeListPage.xaml
+
+[C:/$Work/Learning/Projects/iStockMicro/iStockMicro/Views/CodeSetupPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.Views.CodeSetupPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CodeSetupPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CodeSetupPage.xaml
+
+[C:/$Work/Learning/Projects/iStockMicro/iStockMicro/Views/CustomerSelectionPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.Views.CustomerSelectionPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CustomerSelectionPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CustomerSelectionPopup.xaml
+
+[C:/$Work/Learning/Projects/iStockMicro/iStockMicro/Views/SaleEntryPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.Views.SaleEntryPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SaleEntryPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SaleEntryPage.xaml
+
+[C:/$Work/Learning/Projects/iStockMicro/iStockMicro/Views/TownshipPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.Views.TownshipPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\TownshipPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\TownshipPage.xaml
+
+[C:/$Work/Learning/Projects/iStockMicro/iStockMicro/Views/TownshipPopUp.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.Views.TownshipPopUp.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\TownshipPopUp.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\TownshipPopUp.xaml

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="iStockMicro.Views.CodeListPage"
+             xmlns:fonthelper="clr-namespace:iStockMicro.FontIconHelper"
+             Title="ItemCode List">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="AddItems_Clicked">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="MaterialDesingIconFont"
+                                         Color="LightGray"
+                                         Glyph="{x:Static fonthelper:MaterialIconFont.PlusCircle}"
+                                         Size="28"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <CollectionView ItemsSource="{Binding CodeList}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label 
+                       Text="{Binding usrcode}"
+                       FontAttributes="Bold" />
+                        <Label Grid.Row="1"
+                       Text="{Binding description}"
+                       FontAttributes="Italic"
+                       VerticalOptions="End" />
+                        <Label Grid.Row="0" 
+                               Grid.RowSpan="2" 
+                               Grid.Column="1"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"
+                       Text="{Binding saleprice,StringFormat='{0:#,###,##}'}"
+                       FontAttributes="Italic"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ScrollView>
+</ContentPage>

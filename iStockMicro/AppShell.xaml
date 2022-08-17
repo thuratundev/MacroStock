@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="iStockMicro.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:iStockMicro"
+    xmlns:pages="clr-namespace:iStockMicro.Views"
+    xmlns:fonthelper="clr-namespace:iStockMicro.FontIconHelper"
+    FlyoutHeaderBehavior="CollapseOnScroll"
+    Shell.FlyoutBehavior="Flyout">
+    <Shell.FlyoutHeader>
+        <ContentView HeightRequest="200">
+            <Grid BackgroundColor="LightBlue">
+                <Image 
+                       Opacity="0.5"
+                       Margin="5">
+                    <Image.Source>
+                        <FontImageSource FontFamily="MaterialDesingIconFont"
+                                         Color="{DynamicResource Tertiary}"
+                                         Glyph="{x:Static fonthelper:MaterialIconFont.Shopping}"
+                                         Size="100"/>
+                    </Image.Source>
+                </Image>
+                <Label
+                    Margin="0,45,0,0"
+                    FontSize="Large"
+                    Text="Happy Mart"
+                    TextColor="WhiteSmoke"
+                    FontAttributes="Bold"
+                    FontFamily="UbuntuRegular"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center" />
+            </Grid>
+        </ContentView>
+    </Shell.FlyoutHeader>
+    
+    <FlyoutItem>
+        <Shell.ItemTemplate>
+            <DataTemplate>
+                <Grid  Margin="5,20,5,5" RowDefinitions="*,auto" ColumnDefinitions="0.2*,*">
+                    <Image
+                       Margin="5"
+                       WidthRequest="35"
+                       HeightRequest="35">
+                        <Image.Source>
+                            <FontImageSource FontFamily="MaterialDesingIconFont"
+                                         Color="#320b86"
+                                         Glyph="{x:Static fonthelper:MaterialIconFont.RocketLaunch}"
+                                         Size="35"/>
+                        </Image.Source>
+                    </Image>
+                    <Label Margin="30,0,0,0"
+                        Grid.Column="1"
+                       Text="Items List"
+                       TextColor="#65499c"
+                       FontAttributes="Bold"
+                       FontSize="Subtitle"
+                       VerticalTextAlignment="Center" />
+                    <BoxView Margin="0,10,0,0" Grid.Row="1" Grid.ColumnSpan="2" HeightRequest="1" Color="LightGray" />
+                </Grid>
+            </DataTemplate>
+        </Shell.ItemTemplate>
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate pages:CodeListPage}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem>
+        <Shell.ItemTemplate>
+            <DataTemplate>
+                <Grid  Margin="5" RowDefinitions="*,auto" ColumnDefinitions="0.2*,*">
+                    <Image
+                       Margin="5"
+                       WidthRequest="35"
+                       HeightRequest="35">
+                        <Image.Source>
+                            <FontImageSource FontFamily="MaterialDesingIconFont"
+                                         Color="#320b86"
+                                         Glyph="{x:Static fonthelper:MaterialIconFont.Pizza}"
+                                         Size="35"/>
+                        </Image.Source>
+                    </Image>
+                    <Label Margin="30,0,0,0"
+                        Grid.Column="1"
+                       Text="Categories"
+                           TextColor="#65499c"
+                       FontAttributes="Bold"
+                       FontSize="Subtitle"
+                       VerticalTextAlignment="Center" />
+                    <BoxView Margin="0,10,0,0" Grid.Row="1" Grid.ColumnSpan="2" HeightRequest="1" Color="LightGray" />
+                </Grid>
+            </DataTemplate>
+        </Shell.ItemTemplate>
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate pages:CategoryListPage}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem>
+        <Shell.ItemTemplate>
+            <DataTemplate>
+                <Grid  Margin="5" RowDefinitions="*,auto" ColumnDefinitions="0.2*,*">
+                    <Image
+                       Margin="5"
+                       WidthRequest="35"
+                       HeightRequest="35">
+                        <Image.Source>
+                            <FontImageSource FontFamily="MaterialDesingIconFont"
+                                         Color="#320b86"
+                                         Glyph="{x:Static fonthelper:MaterialIconFont.HumanCane}"
+                                         Size="35"/>
+                        </Image.Source>
+                    </Image>
+                    <Label Margin="30,0,0,0"
+                        Grid.Column="1"
+                       Text="Customers"
+                           TextColor="#65499c"
+                       FontAttributes="Bold"
+                       FontSize="Subtitle"
+                       VerticalTextAlignment="Center" />
+                    <BoxView Margin="0,10,0,0" Grid.Row="1" Grid.ColumnSpan="2" HeightRequest="1" Color="LightGray" />
+                </Grid>
+            </DataTemplate>
+        </Shell.ItemTemplate>
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem>
+        <Shell.ItemTemplate>
+            <DataTemplate>
+                <Grid  Margin="5" RowDefinitions="*,auto" ColumnDefinitions="0.2*,*">
+                    <Image
+                       Margin="5"
+                       WidthRequest="35"
+                       HeightRequest="35">
+                        <Image.Source>
+                            <FontImageSource FontFamily="MaterialDesingIconFont"
+                                         Color="#320b86"
+                                         Glyph="{x:Static fonthelper:MaterialIconFont.Train}"
+                                         Size="35"/>
+                        </Image.Source>
+                    </Image>
+                    <Label Margin="30,0,0,0"
+                        Grid.Column="1"
+                       Text="Sales"
+                           TextColor="#65499c"
+                       FontAttributes="Bold"
+                       FontSize="Subtitle"
+                       VerticalTextAlignment="Center" />
+                    <BoxView Margin="0,10,0,0" Grid.Row="1" Grid.ColumnSpan="2" HeightRequest="1" Color="LightGray" />
+                </Grid>
+            </DataTemplate>
+        </Shell.ItemTemplate>
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate pages:SaleEntryPage}" />
+        </Tab>
+    </FlyoutItem>
+    
+    
+    <Shell.FlyoutFooter>
+        <ContentView 
+             >
+            <StackLayout HorizontalOptions="End" Margin="20">
+                <Label Text="GalaxySoftware"
+               TextColor="Black"
+               FontSize="11"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+                <Label Text="Powered By MAUI"
+               TextColor="Black"
+               FontSize="9"
+               HorizontalOptions="Center" />
+            </StackLayout>
+        </ContentView>
+    </Shell.FlyoutFooter>
+
+
+
+</Shell>

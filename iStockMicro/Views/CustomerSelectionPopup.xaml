@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+                         CanBeDismissedByTappingOutsideOfPopup="False"
+             x:Class="iStockMicro.Views.CustomerSelectionPopup"
+             VerticalOptions="Center"
+             Color="Transparent">
+
+    <Frame BorderColor="LightGray" Padding="2,5,2,5" CornerRadius="20" Margin="10,5,10,5" WidthRequest="350">
+        
+        <Grid RowDefinitions="auto,*">
+
+            <StackLayout Margin="10">
+                
+                <Label Margin="20,0,0,0" Text="Customer" TextColor="DarkGray" FontSize="Title"/>
+                <BoxView Color="LightGray"
+                 Margin="20,15,20,10"
+             HeightRequest=".5"
+             HorizontalOptions="Fill" />
+            </StackLayout>
+
+
+            <ListView 
+             ItemSelected="lsv_ItemSelected"
+                Grid.Row="1"
+              MaximumHeightRequest="350"
+              Margin="20"
+              BackgroundColor="Transparent"
+              RowHeight="50"
+              SeparatorColor="LightGray"
+              SeparatorVisibility="Default"
+              ItemsSource="{Binding CustomerList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <!--<Image Grid.RowSpan="2"
+                           Source="{Binding ImageUrl}"
+                           Aspect="AspectFill"
+                           HeightRequest="60"
+                           WidthRequest="60" />-->
+                                <Label Grid.Column="1"
+                           Text="{Binding customername}"
+                           FontAttributes="Bold" />
+                                <Label Grid.Row="1"
+                           Grid.Column="1"
+                           Text="{Binding address}"
+                           FontAttributes="Italic"
+                           VerticalOptions="End" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </Grid>
+    </Frame>
+
+</toolkit:Popup>
