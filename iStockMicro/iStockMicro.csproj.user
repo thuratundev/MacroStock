@@ -39,11 +39,5 @@
     <MauiXaml Update="Views\SaleEntryPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="Views\TownshipPage.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="Views\TownshipPopUp.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
   </ItemGroup>
 </Project>
