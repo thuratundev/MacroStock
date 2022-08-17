@@ -92,15 +92,3 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.Views.SaleEntryPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\SaleEntryPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\SaleEntryPage.xaml
-
-[C:/$Work/Learning/Projects/iStockMicro/iStockMicro/Views/TownshipPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.Views.TownshipPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\TownshipPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\TownshipPage.xaml
-
-[C:/$Work/Learning/Projects/iStockMicro/iStockMicro/Views/TownshipPopUp.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = iStockMicro.Views.TownshipPopUp.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\TownshipPopUp.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\TownshipPopUp.xaml

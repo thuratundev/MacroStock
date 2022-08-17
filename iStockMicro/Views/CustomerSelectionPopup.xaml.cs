@@ -28,21 +28,8 @@ public partial class CustomerSelectionPopup : Popup
 
     }
 
-    private async void lsv_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    private  void lsv_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
-        //this.Close((sender as ListView).SelectedItem);
-
-
-        //this.Parent  = new NavigationPage(new TownshipPage());
-
-        await (this.Parent as Page).Navigation.PushAsync(new TownshipPage());
-
-        //var tsppopup = new TownshipPopUp();
-
-        
-        //(this.Parent as Page).ShowPopup(tsppopup);
-
-
-  
+        this.Close((sender as ListView).SelectedItem);
     }
 }
