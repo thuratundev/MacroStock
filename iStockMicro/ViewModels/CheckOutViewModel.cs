@@ -1,4 +1,5 @@
-﻿using iStockMicro.Models;
+﻿using iStockMicro.DataAccess;
+using iStockMicro.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,6 +11,7 @@ namespace iStockMicro.ViewModels
 {
     public class CheckOutViewModel : BaseViewModel
     {
+        SqlUtilities sqlUtilities;
         private decimal? _InvoiceAmount;
         public decimal? InvoiceAmount
         {
@@ -72,11 +74,26 @@ namespace iStockMicro.ViewModels
             }
         }
 
+        public CheckOutViewModel()
+        {
+            sqlUtilities = new SqlUtilities();
+        }
 
         public void CalculateTotalValues()
         {
             InvoiceAmount = SaleDet.Sum(x => (x.saleprice ?? 0 * x.unitqty ?? 1));
             InvoiceQty = SaleDet.Sum(x =>  x.unitqty ?? 1).ToString();
+        }
+
+        public async Task<int> SaveVoucher()
+        {
+
+            int recordcount = 0;
+
+            recordcount = await sqlUtilities.Insert(SaleHead);
+            recordcount = await sqlUtilities.InsertAll<SaleDet>(SaleDet);
+
+            return recordcount;
         }
     }
 }

@@ -1,3 +1,4 @@
+using iStockMicro.DataAccess;
 using iStockMicro.Models;
 using iStockMicro.ViewModels;
 
@@ -24,9 +25,22 @@ public partial class CheckOutPage : ContentPage
 
     }
 
-    private void Confirm_Clicked(object sender, EventArgs e)
+    private  async void Confirm_Clicked(object sender, EventArgs e)
     {
+        var recordcount = await viewModel.SaveVoucher();
+        if (recordcount > 0)
+        {
+            
+            await DisplayAlert("Info", "You have been confirmed Successfully", "OK");
+           
+           
+            viewModel.SaleHead = null;
+            viewModel.SaleDet.Clear();
 
+            MessagingCenter.Send<CheckOutPage>(this, "CheckoutExecuted");
+            await Navigation.PopAsync();
+
+        }
     }
 
     private void OnDeleteSwipeItemInvoked(object sender, EventArgs e)
@@ -34,5 +48,6 @@ public partial class CheckOutPage : ContentPage
         var deleteditem = viewModel.SaleDet.Where(x => x.srno == ((SaleDet)cv_checkoutlist.SelectedItem).srno).FirstOrDefault();
         viewModel.SaleDet.Remove(deleteditem);
         viewModel.CalculateTotalValues();
+        MessagingCenter.Send<CheckOutPage>(this, "CheckoutExecuted");
     }
 }

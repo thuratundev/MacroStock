@@ -21,6 +21,11 @@ public partial class SaleEntryPage : ContentPage
 		InitializeComponent();
         this.BindingContext = viewmodel = new SaleEntryPageViewModel();
 
+        MessagingCenter.Subscribe<CheckOutPage>(this, "CheckoutExecuted", (sender) =>
+        {
+            RecalculateValue(sender);
+        });
+
         _CodeListComponent.AddToCartItemExecute = DoAddToCartItemExecute;
         _CodeGridComponent.AddToCartItemExecute = DoAddToCartItemExecute;
         customer = new();
@@ -32,7 +37,20 @@ public partial class SaleEntryPage : ContentPage
 
     }
 
-	private void DoAddToCartItemExecute(UsrCode usrcode)
+    private void RecalculateValue(CheckOutPage sender)
+    {
+        viewmodel.InvoiceAmount = sender.viewModel.SaleDet.Sum(x => x.saleprice??0 * x.unitqty??0);
+
+        var _invoiceqty = sender.viewModel.SaleDet.Sum(x => x.unitqty ?? 0);
+        viewmodel.InvoiceQty = _invoiceqty.ToString();
+
+        if(_invoiceqty == 0)
+        {
+            frm_totalqty.IsVisible = false;
+        }
+    }
+
+    private void DoAddToCartItemExecute(UsrCode usrcode)
     {
         viewmodel.SalesItemsList.Add(usrcode);
         viewmodel.InvoiceAmount = viewmodel.SalesItemsList.Sum(x => x.saleprice);

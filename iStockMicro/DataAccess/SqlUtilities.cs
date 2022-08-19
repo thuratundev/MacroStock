@@ -24,6 +24,8 @@ namespace iStockMicro.DataAccess
         {
            await _db.CreateTableAsync<UsrCode>();
            await _db.CreateTableAsync<Category>();
+           await _db.CreateTableAsync<SaleHead>();
+            await _db.CreateTableAsync<SaleDet>();
         }
 
 
@@ -32,6 +34,11 @@ namespace iStockMicro.DataAccess
             return await _db.Table<T>().ToListAsync();
         }
       
+        public async Task<int>  InsertAll<T>(IEnumerable<T> entity)
+        {
+            int count = await _db.InsertAllAsync(entity);
+            return count;
+        }
         public async Task<int> Insert<T>(T entity)
         {
             int count = await _db.InsertAsync(entity);
