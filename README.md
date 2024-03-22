@@ -12,6 +12,9 @@ Welcome to MacroStock Project! This project is built with MAUI Native and follow
 - **ListView:** View your data in a structured and organized manner.
 - **Animated Popup Dialog:** Enjoy a dynamic user experience with animated dialogs.
 
+## ScreenShots
+<img src = "screenshots/Image1.jpg" width ="200" />
+
 ## Getting Started
 
 To get started with MacroStock, follow these steps:
