@@ -13,7 +13,7 @@ Welcome to MacroStock Project! This project is built with MAUI Native and follow
 - **Animated Popup Dialog:** Enjoy a dynamic user experience with animated dialogs.
 
 ## ScreenShots
-<img src = "screenshots/Image1.jpg" width ="200" />
+<img src = "Screenshots/Image1.jpg" width ="200" />
 
 ## Getting Started
 
